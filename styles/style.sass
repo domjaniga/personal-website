@@ -1,0 +1,370 @@
+// ITW PROJECT 2
+// Author: Dominik Janiga
+// xlogin: xjanigd00
+    
+@import url('./satoshi.css')
+@import url('./cabinet-grotesk.css')
+
+$black: black
+$gray: #505050
+$white: white
+$highlight: red
+
+@mixin reset-margin-padding
+    margin: 0
+    padding: 0
+
+@mixin section-sizing
+    height: 1000px
+    padding-top: 100px
+    padding-left: 70px
+    padding-right: 70px
+
+@mixin about-section
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    .about-left
+        flex-grow: 1
+
+        h3
+            font-family: Satoshi-Regular
+            color: $gray
+            font-size: 15px
+
+    .about-right
+        font-family: Satoshi-Regular
+        color: $black
+
+html
+    scroll-behavior: smooth
+
+body
+    margin: 0
+    padding: 0
+
+.topnav
+    display: none
+    height: 74px
+    font-family: Satoshi-Regular
+
+    overflow: hidden
+    background-color: #333
+    position: relative
+
+
+.topnav #myLinks
+    display: none
+    a
+        color: $black
+
+
+.topnav a
+    font-family: Satoshi-Regular
+    // color: $white
+    padding: 14px 16px
+    text-decoration: none
+    font-size: 15px
+    display: block
+
+
+.topnav a.icon
+    color: $white
+    background: black
+    display: block
+    position: absolute
+    right: 0
+    top: 0
+
+
+.topnav a:hover
+    color: $gray
+
+
+.active
+    // background-color: $white
+    color: $black
+
+
+#bring-it-back
+    display: none
+    position: -webkit-sticky
+    position: sticky
+    bottom: 10px
+    right: 10px
+
+.links
+    align-items: center
+
+    ul
+        display: flex
+        flex-direction: row
+
+        padding: 0
+
+        li
+            margin: 10px
+            list-style: none
+
+            a
+                color: black
+                text-decoration: none
+
+.socials
+    display: flex
+    flex-direction: row
+
+    img
+        margin-right: 15px
+        width: 20px
+
+.section-heading
+    font-family: CabinetGrotesk-Medium
+    font-size: 75px
+
+    margin: 0
+    padding: 0
+
+#navbar
+    position: -webkit-sticky
+    position: sticky
+    top: 0
+
+    display: flex
+
+    padding-left: 20px
+    padding-right: 20px
+
+    text-align: center
+    align-items: center
+    justify-content: space-between
+
+    background-color: white
+    font-family: Satoshi-Regular
+
+#hero
+    display: flex
+
+    height: 800px
+    font-family: Satoshi-Regular
+
+    padding-left: 20px
+    padding-right: 20px
+
+    background-image: linear-gradient(45deg, #fdfbfb 0%, #ebedee 100%)
+
+    #janiga-decoration
+        font-size: 300px
+        a
+            font-family: CabinetGrotesk-Medium
+
+
+    #hero-main
+        align-self: flex-end
+        margin-bottom: 250px
+        margin-left: 50px
+        flex-grow: 1
+
+        p
+            width: 367px
+            overflow: auto
+
+            text-align: left
+
+            margin-top: 30px
+            margin-bottom: 30px
+
+            font-size: 15px
+            color: $gray
+
+    #hero-contact
+        font-size: 15px
+        align-self: flex-end
+        text-align: right
+        margin-bottom: 50px
+        margin-right: 50px
+
+        p
+            color: $gray
+
+            margin-top: 5px
+            margin-bottom: 5px
+        a
+            color: $black
+            text-decoration: none
+
+#work
+    @include section-sizing
+    
+    background-image: linear-gradient(-45deg, $black 0%, #010101 100%)
+
+    .section-heading
+        color: $white
+
+    .container
+        margin-top: 50px 
+
+    #work-items
+        display: flex
+        flex-direction: row
+
+        justify-content: space-between
+
+        .item
+            display: flex
+            margin-left: 10px
+            margin-right: 10px
+
+            flex-grow: 1
+
+            background-color: $black
+            background-image: url('/assets/images/placeholder.png')
+
+            // width: 20vw
+            height: 600px
+
+            a
+                font-family: Satoshi-Light
+                font-size: 15px
+                bottom: -30px
+                align-self: flex-end
+                position: relative
+                color: $white
+                text-decoration: none
+
+#about
+    @include section-sizing
+
+    #about-container
+        margin-top: 50px
+
+    hr
+        border-top: 1px dashed $gray
+
+    #overview
+        @include about-section
+    
+    #skills
+        @include about-section
+
+        .about-right
+            display: flex
+            flex-direction: row
+
+            #categories
+                justify-content: flex-end
+
+            .category-item
+                display: flex
+                flex-direction: row
+
+                justify-content: flex-end
+
+                progress
+                    margin-left: 20px
+        
+    #education
+        @include about-section
+        
+        .about-right
+            display: flex
+            flex-direction: column
+
+            .education-item
+                margin-top: 20px
+                h3, p
+                    @include reset-margin-padding
+
+                display: flex
+                flex-direction: column
+
+#contact
+    @include section-sizing
+    height: 500px
+    padding-bottom: 50px
+
+    display: flex
+    flex-direction: column
+    // align-items: flex-end
+    justify-content: flex-end
+
+    background-image: url('/assets/images/background.png')
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    background-color: black
+
+    #mail
+        font-size: 20px
+        font-family: CabinetGrotesk-Medium
+        text-decoration: none
+        color: $white
+
+    h3
+        @include reset-margin-padding
+        
+        font-family: Satoshi-Light
+        color: $gray
+        font-size: 25px
+
+    h2
+        @include reset-margin-padding
+        
+        font-family: CabinetGrotesk-Medium
+        color: $white
+        font-size: 150px
+
+        a
+            text-decoration: none
+            color: $white
+
+#footer
+    font-family: Satoshi-Regular
+    height: 100px
+
+    align-items: center
+
+    padding-left: 70px
+    padding-right: 70px
+
+    display: flex
+    justify-content: space-between
+
+    #logo
+        width: 30px
+
+    #license
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+
+        p
+            @include reset-margin-padding
+
+@media screen and (max-width: 1732px)
+    #janiga-decoration
+        display: none
+
+// @media screen and (max-width: 648px)
+
+@media screen and (max-width: 428px)
+    #navbar
+        display: none
+    .topnav
+        display: contents
+
+    #hero-main
+        margin-left: 0px
+        margin-bottom: 0px
+        
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    #work-items
+        height: auto
+        display: flex !important
+        flex-direction: column !important
+        width: 90vw !important
+        align-items: center !important
